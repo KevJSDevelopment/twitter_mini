@@ -1,0 +1,15 @@
+<h1> <%= @user.user_name.capitalize %>'s Page </h1>
+<h2> <%= link_to "Edit #{@user.user_name}", edit_user_path(@user.id) %>
+<br>
+<div>
+    <ul> 
+        <% @user_tweets.each do |tweet| %> 
+            <div> posted on: <%= tweet.post_time.to_date %> </div>
+            <div> at: <%= tweet.post_time.strftime("%I:%M %p") %> </div>
+            <br>
+            <div> Tweet - </div>
+            <div> <%= tweet.message %> </div
+            <br>
+        <%end%>
+    </ul>
+</div>

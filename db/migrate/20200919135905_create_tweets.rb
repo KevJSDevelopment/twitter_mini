@@ -3,6 +3,7 @@ class CreateTweets < ActiveRecord::Migration[6.0]
     create_table :tweets do |t|
       t.integer :user_id
       t.text :message
+      t.datetime :post_time
       t.timestamps
     end
   end

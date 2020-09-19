@@ -12,5 +12,5 @@ Tweet.delete_all
 
 (3).times do 
     user = User.create(user_name: Faker::Twitter.unique.screen_name)
-    Tweet.create(user_id: user.id, message: Faker::Quote.unique.famous_last_words)
+    Tweet.create(user_id: user.id, message: Faker::Quote.unique.famous_last_words, post_time: Faker::Time.between_dates(from: Date.today - 100, to: Date.today + 100, period: :all))
 end
